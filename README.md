@@ -39,7 +39,7 @@ Projeto contém também a validação de email na fila de eventos do RabbitMQ, p
 
 ## 🛠️ Construído com
 
-* [RobotFramework](https://robotframework.org/) - O framework web usado
+* [RobotFramework](https://robotframework.org/) - O framework de teste usado
 * [Python](https://www.python.org/) - Ambiente para programação
 * [RabbitMQ](https://www.rabbitmq.com/) - Agende de filas de mensagem
 
