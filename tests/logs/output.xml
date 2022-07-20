@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.9 on win32)" generated="20220713 21:46:57.909" rpa="false" schemaversion="3">
+<suite id="s1" name="Post" source="C:\qaninja\buger-eats-partner-api-tests\tests\post.robot">
+<test id="s1-t1" name="Should create a new partner" line="7">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${payload}</var>
+<arg>name=Pizzas Papito</arg>
+<arg>email=contato@papito.com.br</arg>
+<arg>whatsapp=11999999999</arg>
+<arg>business=Restaurante</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220713 21:46:57.950" level="INFO">${payload} = {'name': 'Pizzas Papito', 'email': 'contato@papito.com.br', 'whatsapp': '11999999999', 'business': 'Restaurante'}</msg>
+<status status="PASS" starttime="20220713 21:46:57.949" endtime="20220713 21:46:57.950"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>auth_user=qa</arg>
+<arg>auth_password=ninja</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220713 21:46:57.951" level="INFO">${headers} = {'Content-Type': 'application/json', 'auth_user': 'qa', 'auth_password': 'ninja'}</msg>
+<status status="PASS" starttime="20220713 21:46:57.950" endtime="20220713 21:46:57.951"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${filter}</var>
+<arg>name=Pizzas Papito</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220713 21:46:57.951" level="INFO">${filter} = {'name': 'Pizzas Papito'}</msg>
+<status status="PASS" starttime="20220713 21:46:57.951" endtime="20220713 21:46:57.951"/>
+</kw>
+<kw name="DeleteOne">
+<arg>${MONGO_URI}</arg>
+<arg>${filter}</arg>
+<msg timestamp="20220713 21:46:57.953" level="FAIL">No keyword with name 'DeleteOne' found.</msg>
+<status status="FAIL" starttime="20220713 21:46:57.953" endtime="20220713 21:46:57.954"/>
+</kw>
+<kw name="POST">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<status status="NOT RUN" starttime="20220713 21:46:57.956" endtime="20220713 21:46:57.956"/>
+</kw>
+<kw name="Status Should Be">
+<arg>201</arg>
+<status status="NOT RUN" starttime="20220713 21:46:57.957" endtime="20220713 21:46:57.957"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.json()}[partner_id]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220713 21:46:57.958" endtime="20220713 21:46:57.958"/>
+</kw>
+<kw name="Find">
+<var>${results}</var>
+<arg>${MONGO_URI}</arg>
+<arg>${filter}</arg>
+<status status="NOT RUN" starttime="20220713 21:46:57.959" endtime="20220713 21:46:57.959"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response.json()}[partner_id]</arg>
+<arg>${results}[0][_id]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20220713 21:46:57.959" endtime="20220713 21:46:57.960"/>
+</kw>
+<status status="FAIL" starttime="20220713 21:46:57.948" endtime="20220713 21:46:57.961">No keyword with name 'DeleteOne' found.</status>
+</test>
+<doc>POST /partners</doc>
+<status status="FAIL" starttime="20220713 21:46:57.912" endtime="20220713 21:46:57.964"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Post">Post</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220713 21:46:57.945" level="ERROR">Error in file 'C:\qaninja\buger-eats-partner-api-tests\tests\post.robot' on line 4: Resource file 'C:\qaninja\buger-eats-partner-api-tests\tests\resources\base.robot' does not exist.</msg>
+</errors>
+</robot>
