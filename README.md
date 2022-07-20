@@ -33,7 +33,8 @@ Projeto contém também a validação de email na fila de eventos do RabbitMQ, p
 
 - Após execução dos testes abrir > ...\buger-eats-partner-api-tests\logs
 - Validar a execução dos testes via log relatório de execução:
-image.png
+![image](https://user-images.githubusercontent.com/62728615/180017870-6be538b7-46f2-4762-bf81-b006deeef3df.png)
+
 
 
 ## 🛠️ Construído com
