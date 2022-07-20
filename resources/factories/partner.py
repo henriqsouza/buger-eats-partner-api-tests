@@ -46,7 +46,7 @@ def factory_new_partner():
 
 def factory_dup_partner():
     partner = {
-	'name': 'Buteco da Mara',
+	'name': 'Bar da Mara',
 	'email': 'contato@mara.com.br',
 	'whatsapp': '11999999999',
 	'business': 'Conveniência'
@@ -56,19 +56,19 @@ def factory_dup_partner():
 def factory_partner_list():
 	p_list = [
 	{
-	'name': 'Buteco da Marcão',
+	'name': 'Bar do Marcão',
 	'email': 'contato@marcao.com.br',
 	'whatsapp': '11999991001',
 	'business': 'Conveniência'
     },
 	{
-	'name': 'Buteco do Risca Faca',
+	'name': 'Bar RF',
 	'email': 'contato@brf.com.br',
 	'whatsapp': '11999991002',
 	'business': 'Conveniência'
     },
 	{
-	'name': 'Mercadinho Santanao',
+	'name': 'Mercadinho Santana',
 	'email': 'contato@mercado.com.br',
 	'whatsapp': '11999991003',
 	'business': 'Supermercado'
